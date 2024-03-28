@@ -1,0 +1,630 @@
+:root {
+--popup_form_font_size: 10px;	
+}	
+
+div.wrapper__popup {
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+justify-content: space-between;
+margin: 0 auto;
+box-sizing: border-box;
+padding: 0;
+background: #ffffff;
+z-index: 400;
+color: #555;
+font-family: Cuprum, Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+/* width: 100%; */
+width: min-content;
+/* height: min-content;
+overflow-y: auto; */
+}
+
+p.popup__title {
+font-size: calc(var(--popup_form_font_size) * 2.5);
+/* margin: 0 auto 1em;	 */
+margin: 0 auto 0;
+padding: 0.75em 0 0;
+}	
+p.popup__text {
+font-size: calc(var(--popup_form_font_size) * 1.6);
+margin: 0 auto 1.5em;
+}
+div.popup__formblock {
+display: flex;
+flex-direction: column;
+min-width: 250px;
+box-sizing: border-box;
+pointer-events: auto;
+color: inherit;
+}
+
+div.popup__formblock form {
+display: flex;
+flex-direction: column;
+width: 100%;
+box-sizing: border-box;
+color: inherit;
+
+min-width: 320px;
+}
+
+div.popup__formblock select {
+width: 100%;
+padding: 0.6em;
+background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%,#ffffff 100%);
+-ms-appearance: none;
+-moz-appearance: none;
+-webkit-appearance: none;
+appearance: none;
+background-repeat: no-repeat, repeat;
+background-position: right 1em top 50%, 0 0;
+background-size: .65em auto, 100%;
+border: 1px solid #999;
+margin: 0 0 1.5em;
+font-size: calc(var(--popup_form_font_size) * 2);
+color: #555;
+
+box-sizing: border-box;
+}
+div.popup__formblock select::-ms-expand {
+display: none;
+}
+div.popup__formblock select:required:invalid {
+color: #767676;
+}
+div.popup__formblock option {
+color: #555;	
+} 
+
+div.popup__formblock textarea {
+    margin: 0 0 1.5em;
+    border: 1px solid #999;
+    padding: 0.6em;
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(var(--popup_form_font_size) * 2);
+    background: #FFFFFF;
+    color: #555;
+}
+div.popup__formblock textarea:-webkit-autofill, div.popup__formblock textarea:-webkit-autofill:hover, div.popup__formblock textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: #555;
+    -webkit-box-shadow: 0 0 0 1000px rgba(85, 32, 32, 0.3) inset;
+    transition: background-color 5000s ease-in-out 0s;
+    }
+
+div.popup__formblock input {
+margin: 0 0 1.5em;
+border: 1px solid #999;
+padding: 0.6em;
+font-family: 'Roboto', sans-serif;
+font-size: calc(var(--popup_form_font_size) * 2);
+background: #FFFFFF;
+color: #555;
+}
+div.popup__formblock input:-webkit-autofill, div.popup__formblock input:-webkit-autofill:hover, div.popup__formblock input:-webkit-autofill:focus {
+-webkit-text-fill-color: #555;
+-webkit-box-shadow: 0 0 0 1000px rgba(85, 32, 32, 0.3) inset;
+transition: background-color 5000s ease-in-out 0s;
+}
+
+/* .popup__formblock input[placeholder] { text-overflow: ellipsis; color: #767676; } */
+div.popup__formblock textarea::-moz-placeholder { text-overflow: ellipsis; color: #767676; } 
+div.popup__formblock textarea:-moz-placeholder  { text-overflow: ellipsis; color: #767676; } 
+div.popup__formblock textarea:-ms-input-placeholder { text-overflow: ellipsis; color: #767676; }
+div.popup__formblock textarea::-webkit-input-placeholder { text-overflow: ellipsis; color: #767676; }
+
+/* .popup__formblock input[placeholder] { text-overflow: ellipsis; color: #767676; } */
+div.popup__formblock input::-moz-placeholder { text-overflow: ellipsis; color: #767676; } 
+div.popup__formblock input:-moz-placeholder  { text-overflow: ellipsis; color: #767676; } 
+div.popup__formblock input:-ms-input-placeholder { text-overflow: ellipsis; color: #767676; }
+div.popup__formblock input::-webkit-input-placeholder { text-overflow: ellipsis; color: #767676; }
+
+/* плавное изменение прозрачности  placeholder-а при фокусе */
+div.popup__formblock textarea::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+div.popup__formblock textarea::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+div.popup__formblock textarea:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+div.popup__formblock textarea:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+div.popup__formblock textarea:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+div.popup__formblock textarea:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+div.popup__formblock textarea:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+div.popup__formblock textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+/* плавное изменение прозрачности  placeholder-а при фокусе */
+div.popup__formblock input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+div.popup__formblock input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+div.popup__formblock input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+div.popup__formblock input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+div.popup__formblock input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+div.popup__formblock input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+div.popup__formblock input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+div.popup__formblock input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+
+
+
+div.popup__formblock button {
+color: #FFFFFF;
+background-color: green;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+font-family: inherit;
+text-align: center;
+border: 0 none;
+font-size: calc(var(--popup_form_font_size) * 2.5);
+padding: 0.6em 0;
+font-weight: 700;
+cursor: pointer;
+margin: 0 auto 1em;
+outline: none;
+width: 100%;
+background: linear-gradient(180deg, rgba(71, 232, 25, 0.8) 0%, rgba(9, 146, 9, 0.9) 100%);
+box-shadow: 0 0.15em 0.15em rgba(0, 0, 0, 0.25);
+}
+div.popup__formblock button:hover {
+background: linear-gradient(180deg, rgba(255, 0, 0, 0.48) 0%, rgba(255, 0, 0, 0.98) 100%);
+box-shadow: 0 0.07em 0.07em rgba(0, 0, 0, 0.25);
+}
+
+
+/* input:invalid { */
+/* border: 1px dashed red !important; */
+/* border-radius: 5px; */
+/* } */
+
+/* input:valid { */
+/* border-bottom: 1px solid #00e624 !important; */
+/* border: 1px solid #00e624 !important;								 */
+/* } */
+
+/* select:invalid { */
+/* border: 1px dashed red !important; */
+/* border-radius: 5px; */
+/* } */
+
+/* select:valid { */
+/* border: 1px solid #00e624 !important; */
+/* } */
+/* input:placeholder-shown { */
+/* border: 1px dashed red !important; */
+/* border-radius: 5px; */
+/* }	 */
+
+div.error-valid {
+display: none;
+flex-direction: row;
+align-items: center;
+/* justify-content: center; */
+margin: 0 0 1.5em;
+font-size: calc(var(--popup_form_font_size) * 2);
+width: 0;
+min-width: 100%; 
+text-align: initial;
+border: 1px dashed #fff;     
+background: red;
+color: #fff; 
+border-radius: 5px;
+padding: 1em 3em 1em 1em;
+box-sizing: border-box;
+position: relative;
+/* max-height: 0;
+overflow: hidden;
+transition: max-height 0.9s; */
+}
+div.error-valid > p {
+margin: 0;    
+padding: 0;
+}    
+div.error-valid-hidden {
+animation: center-animate 2s ease alternate;
+/* transform: scaleY(0.01);    */
+}
+@keyframes center-animate {
+    /* 0% { transform: scaleY(120) } */
+    100% { transform: scaleY(0) }
+}
+div.error-valid:before {
+content: "";
+border: 15px solid transparent;
+position: absolute;
+border-left-color: #f00;
+/* margin: -3.5em 0 0 0; */
+left: 1em;
+top: -0.5em;
+}
+
+span.error-valid-close {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;    
+}
+span.error-valid-close:after {
+content: "\2716";
+right: 1em;
+color: #fff;
+position: absolute;
+font-size: calc(var(--popup_form_font_size) * 2);
+cursor: pointer;
+font-weight: bold;
+text-align: center;
+}
+
+p.form-policy {
+    margin: 0 0 2em;
+    box-sizing: border-box;
+    display: block;
+    line-height: initial;
+    /* min-height: 70px; */
+    font-size: 120%;
+}
+
+/* STANDART FORM ROW STYLES #################### */
+
+/* div.standart_form * {
+border: 1px solid red;;
+} */
+
+/* .popup__formblock input[placeholder] { text-overflow: ellipsis; color: #767676; } */
+div.standart_form_row textarea::-moz-placeholder { text-overflow: ellipsis; color: #767676; } 
+div.standart_form_row textarea:-moz-placeholder  { text-overflow: ellipsis; color: #767676; } 
+div.standart_form_row textarea:-ms-input-placeholder { text-overflow: ellipsis; color: #767676; }
+div.standart_form_row textarea::-webkit-input-placeholder { text-overflow: ellipsis; color: #767676; }
+
+/* .popup__formblock input[placeholder] { text-overflow: ellipsis; color: #767676; } */
+div.standart_form_row input::-moz-placeholder { text-overflow: ellipsis; color: #767676; } 
+div.standart_form_row input:-moz-placeholder  { text-overflow: ellipsis; color: #767676; } 
+div.standart_form_row input:-ms-input-placeholder { text-overflow: ellipsis; color: #767676; }
+div.standart_form_row input::-webkit-input-placeholder { text-overflow: ellipsis; color: #767676; }
+
+/* плавное изменение прозрачности  placeholder-а при фокусе */
+div.standart_form_row textarea::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+div.standart_form_row textarea::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+div.standart_form_row textarea:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+div.standart_form_row textarea:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+div.standart_form_row textarea:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+div.standart_form_row textarea:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+div.standart_form_row textarea:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+div.standart_form_row textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+/* плавное изменение прозрачности  placeholder-а при фокусе */
+div.standart_form_row input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+div.standart_form_row input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+div.standart_form_row input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+div.standart_form_row input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+div.standart_form_row input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+div.standart_form_row input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+div.standart_form_row input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+div.standart_form_row input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+
+
+div.standart_form_row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 200px;
+    justify-content: center;
+    width: 100%;
+    padding: 30px 0 80px;
+}
+div.standart_form_row_title {
+    max-width: 1200px;
+    min-width: 760px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: "Golos", Arial, sans-serif;
+    font-size: 2rem;
+    color: #292d39;
+}
+div.standart_form_row_title p {
+    font-size: 125%;
+    padding: 0.75em 0.75em 0.75em 0;
+}
+div.standart_form_row form {
+    max-width: 1200px;
+    min-width: 760px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+div.standart_form_row form .input-field {
+    padding: 2rem 0 2rem 1.5rem;
+    color: #292d39;
+    border: 0.1rem solid #777;
+    font-size: 2rem;
+    width: 100%;
+}
+
+div.standart_form_row form button {
+    padding: 1.75rem;
+    position: relative;
+    border: none;
+    color: #FFF;
+    font-size: 2.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background: #0c133d;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 800px) {
+
+    div.standart_form_row_title {
+        max-width: initial;
+        min-width: initial;
+        display: flex;
+        flex-direction: row;
+    }
+    div.standart_form_row form {
+        max-width: initial;
+        min-width: initial;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        /* padding: 20px 0; */
+    }
+    div.standart_form_row form .input-field {
+        margin: 0 0 3.5rem;
+        padding: 2rem 0 2rem 1.5rem;
+        color: #292d39;
+        border: 0.1rem solid #777;
+        font-size: 2rem;
+        width: 100%;
+    }
+
+}
+
+
+/* STANDART FORM COLUMN STYLES #################### */
+
+/* div.standart_form * {
+border: 1px solid red;;
+} */
+
+/* .popup__formblock input[placeholder] { text-overflow: ellipsis; color: #767676; } */
+div.standart_form_column textarea::-moz-placeholder { text-overflow: ellipsis; color: #767676; } 
+div.standart_form_column textarea:-moz-placeholder  { text-overflow: ellipsis; color: #767676; } 
+div.standart_form_column textarea:-ms-input-placeholder { text-overflow: ellipsis; color: #767676; }
+div.standart_form_column textarea::-webkit-input-placeholder { text-overflow: ellipsis; color: #767676; }
+
+/* .popup__formblock input[placeholder] { text-overflow: ellipsis; color: #767676; } */
+div.standart_form_column input::-moz-placeholder { text-overflow: ellipsis; color: #767676; } 
+div.standart_form_column input:-moz-placeholder  { text-overflow: ellipsis; color: #767676; } 
+div.standart_form_column input:-ms-input-placeholder { text-overflow: ellipsis; color: #767676; }
+div.standart_form_column input::-webkit-input-placeholder { text-overflow: ellipsis; color: #767676; }
+
+/* плавное изменение прозрачности  placeholder-а при фокусе */
+div.standart_form_column textarea::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+div.standart_form_column textarea::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+div.standart_form_column textarea:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+div.standart_form_column textarea:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+div.standart_form_column textarea:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+div.standart_form_column textarea:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+div.standart_form_column textarea:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+div.standart_form_column textarea:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+/* плавное изменение прозрачности  placeholder-а при фокусе */
+div.standart_form_column input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+div.standart_form_column input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+div.standart_form_column input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+div.standart_form_column input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+div.standart_form_column input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+div.standart_form_column input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+div.standart_form_column input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+div.standart_form_column input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+
+
+div.standart_form_column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 200px;
+    justify-content: center;
+    width: 100%;
+    padding: 30px 0 80px;
+}
+div.standart_form_column_title {
+    max-width: 1200px;
+    min-width: 760px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: "Golos", Arial, sans-serif;
+    font-size: 2rem;
+    color: #292d39;
+}
+div.standart_form_column_title p {
+    font-size: 125%;
+    padding: 0.75em 0.75em 0.75em 0;
+}
+div.standart_form_column form {
+    max-width: 1200px;
+    min-width: 760px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+div.standart_form_column form .input-field {
+    padding: 2rem 0 2rem 1.5rem;
+    color: #292d39;
+    border: 0.1rem solid #777;
+    font-size: 2rem;
+    width: 100%;
+}
+
+div.standart_form_column form button {
+    padding: 1.75rem;
+    position: relative;
+    border: none;
+    color: #FFF;
+    font-size: 2.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background: #0c133d;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width:320px) and (max-width:375px) {
+
+:root {
+--popup_form_font_size: 9px;
+}	
+div.wrapper__popup {
+flex-direction: column;
+width: 100vw;
+min-height: 100vh;
+padding: 0 2em 0 2em;
+margin: -2.5em -2em -2.5em -2em;
+justify-content: center;
+}
+div.popup__formblock select {
+margin: 0 0 2em;
+}
+div.popup__formblock input {
+margin: 0 0 2em;
+}
+p.popup__title {
+margin: 2em auto 1em;
+}
+
+
+}
+@media only screen and (min-width:376px) and (max-width:480px) {
+	
+:root {
+--popup_form_font_size: 9px;
+}
+
+div.wrapper__popup {
+flex-direction: column;
+width: 100vw;
+min-height: 100vh;
+/* min-height: auto; */
+padding: 0 2em 0 2em;
+margin: -2.5em -2em -2.5em -2em;
+justify-content: center;
+}
+
+div.popup__formblock select {
+margin: 0 0 2em;
+}
+div.popup__formblock input {
+margin: 0 0 2em;
+}
+p.popup__title {
+margin: 2em auto 1em;
+}
+
+}
+@media only screen and (min-width:481px) and (max-width:670px) {
+
+:root {
+--popup_form_font_size: 9px;
+}
+
+}		
+
+@media only screen and (min-width:671px) and (max-width:768px) { 
+
+:root {
+--popup_form_font_size: 9px;
+}
+		
+}
+@media only screen and (min-width: 769px) and (max-width: 980px) {
+
+:root {
+--popup_form_font_size: 9px;
+}
+
+}
+@media only screen and (min-width: 981px) and (max-width: 1024px) {
+
+:root {
+--popup_form_font_size: 9px;
+}
+
+}
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+
+:root {
+--popup_form_font_size: 9px;
+}
+
+}
+@media only screen and (min-width: 1281px) and (max-width: 1366px) {
+
+:root {
+--popup_form_font_size: 9px;
+}
+
+}
+@media only screen and (min-width: 1367px) and (max-width: 1600px) {
+
+:root {
+--popup_form_font_size: 10px;
+}
+	
+}
+@media only screen and (min-width: 1601px) and (max-width: 1920px) {
+
+:root {
+--popup_form_font_size: 11px;
+}
+	
+}	
+@media only screen and (min-width: 1921px) and (max-width: 2048px) {
+
+:root {
+--popup_form_font_size: 12px;
+}
+
+}
+@media only screen and (min-width: 2049px) and (max-width: 2560px) {
+
+:root {
+--popup_form_font_size: 12px;
+}
+
+}			
+@media only screen and (min-width: 2561px) {
+
+:root {
+--popup_form_font_size: 12px;
+}
+	
+}	
